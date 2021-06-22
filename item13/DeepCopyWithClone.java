@@ -1,5 +1,8 @@
 package item13;
 
+import java.util.ArrayList;
+import java.util.List;
+
 // 멤버 변수에 변경 가능한 참조 변수를 포함하고 있다면 깊은 복사가 수행될 수 있도록 직접 구현해야 한다. 
 // 여러가지 방법이 있겠으나 일반적으로 아래 코드처럼 Address 클래스에도 clone 메서드를 구현한 뒤 Member 클래스의 clone 메서드 안에서 호출하는 방식으로 구현할 수 있다. 
 
