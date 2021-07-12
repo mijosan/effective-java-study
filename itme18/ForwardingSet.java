@@ -17,6 +17,7 @@ import java.util.Set;
 // 상속은 반드시 하위 클래스가 상위 클래스의 '진짜' 하위 타입인 상황에서만 쓰여야 한다.
 
 // 래퍼 클래스이자 컴포지션 이용 (래퍼 클래스로 구현할 적당한 인터페이스가 있다면 무조건 쓰자)
+// 기존의 Set인터페이스를 구현한 클래스들의 기능도 하면서 추가적인 기능 추가 가능 (컴포지션을 사용해서 가능함)
 public class ForwardingSet<E> implements Set<E> { // Set을 wrap : 즉 래퍼 클래스라 부름
     
     private final Set<E> s; // 컴포지션 : 구성
