@@ -1,4 +1,4 @@
-package item19;
+package item20;
 
 // 추상 클래스보다는 인터페이스를 우선하라 !
 
