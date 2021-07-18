@@ -16,8 +16,12 @@ package item20;
 // 래퍼 클래스 관용구와 함께 사용하면 인터페이스는 기능을 향상시키는 안전하고 강력한 수단이 된다.
 // 인터페이스는 인스턴스 필드를 가질 수 없고 public이 아닌 정적 멤버도 가질 수 없다. (private 정적 메서드는 예외다.)
 // 마지막으로, 내가 만든 인터페이스외에는 디폴트 메서드를 추가할 수 없다.
-public class Interface {
+public class Interface implements Test {
 
+    public static void main(String[] args) {
+        Interface in = new Interface();
 
+        System.out.println(in.name);
+    }
 
 }
