@@ -18,10 +18,16 @@ package item20;
 // 마지막으로, 내가 만든 인터페이스외에는 디폴트 메서드를 추가할 수 없다.
 public class Interface implements Test {
 
+    @Override
+    public void testMethod() {
+        System.out.println("하이2");
+    }
+
     public static void main(String[] args) {
         Interface in = new Interface();
 
         System.out.println(in.name);
+        in.testMethod();
     }
 
 }
