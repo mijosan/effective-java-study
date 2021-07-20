@@ -32,7 +32,7 @@ public interface PhysicalConstants {
 // 인스턴스화할 수 없는 유틸리티 클래스에 담아 공개하자.
 class PhysicalConstants2 {
 
-    private PhysicalConstants2() { }  // 인스턴스화 방지
+    private PhysicalConstants2() { }  // 인스턴스화 방지 (상속 방지) => interface 안티 패턴의 문제점 해결
 
     // 아보가드로 수 (1/몰)
     public static final double AVOGADROS_NUMBER = 6.022_140_857e23;
