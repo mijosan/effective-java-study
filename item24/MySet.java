@@ -7,9 +7,20 @@ package item24;
 
 public class MySet {
     
-    static String name = "태산";
+    private String name = "태산";
 
-    public static void main(String[] args) {
-        System.out.println(MySet.name);
+    public void test() {
+        InnerClass.name = "하이";
     }
+
+    static class InnerClass {
+        static String name;
+
+        void testMethod() {
+            MySet myset = new MySet();
+            System.out.println(myset.name);
+            System.out.println(name);
+        }
+    }
+
 }
