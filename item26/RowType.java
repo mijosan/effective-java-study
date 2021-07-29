@@ -17,6 +17,25 @@ public class RowType {
     // 로 타입을 쓰면 제네릭이 안겨주는 안정성과 표현력을 모두 잃게 된다.
     // 호환성 때문에 만들어 놓음
     // List<Object> 같은 매개변수화 타입을 사용할 때와 달리 List 같은 로 타입을 사용하면 타입 안전성을 읽게 된다.
+    // 로 타입을 쓰지 말하는 규칙에도 소소한 예외가 몇개 있다.
+    // class 리터럴에는 로 타입을 써야 한다. 자바 명세는 class 리터럴에 매개변수화 타입을 사용 하지 못하게 했다.(배열과 기본 타입은 허용한다.) ex)List.class, String[].class, int.class는 허용하고 List<String>.class와 List<?>.class는 허용하지 않는다.
+
+    // 두 번째 예외는 instanceof 연산자와 관련이 있다. 
+    //  런타임에는 제네릭 타입정보가 지원지므로 instanceof 연산자는 비한정적 와일드카드 타입 이외의 매개변수화 타입에는 적용할 수 없다.
+    // o의 타입이 Set임을 확인한 다음 와일드카드 타입인 Set<?>로 형변환해야 한다(로 타입인 Set이 아니다).
+    // 이는 검사 형변환(checked cast)이므로 컴파일러 경고가 뜨지 않는다.
+    // if (o instanceof Set) {
+    //     Set<?> s = (Set<?>) o;
+    // }
+
+    // public <T> void printListItem(List<T> list) {
+    //     if (T instanceof String) {
+    //         for (T item : list) {
+    //             System.out.println(item);
+    //         }
+    //     }
+    // }
+
     private final List rawList = new ArrayList();
 
     // List<Object>처럼 임의 객체를 허용하는 매개변수화 타입은 괜찮다.
