@@ -54,8 +54,8 @@ public class RowType {
 
         String s = strings.get(0); // 컴파일러가 자동으로 형변환 코드를 넣어준다.
 
-        Set<String> s1 = new HashSet<String>();
-        Set<String> s2 = new HashSet<String>();
+        Set s1 = new HashSet();
+        Set<?> s2 = new HashSet<String>();
 
         numElementsInCommon2(s1, s2);
     }
