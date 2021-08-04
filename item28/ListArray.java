@@ -24,6 +24,15 @@ public class ListArray {
         // 컴파일되지 않는다!
         List<Object> ol = new ArrayList<Long>(); // 호환되지 않는 타입이다.
         ol.add("타입이 달라 넣을 수 없다.");
+
+        // 제네릭 배열 생성을 허용하지 않는 이유(컴파일 불가능인 이유)
+        List<String>[] stringLists = new List<String>[1]; // 컴파일이 허용 된다고 가정
+        List<Integer> intList = List.of(42); // 원소 하나 생성
+        Object[] objects = stringLists; // 배열은 공변이기 때문에 Object 배열에 할당됨
+        objects[0] = intList; // 제네릭은 런타임시 타입이 소거되기 때문에 성공함 (ArrayStoreException을 일으키지 않음)
+        String s = stringLists[0].get(0) // 컴파일러는 꺼낸 원소를 자동으로 String으로 형변환하는데, 이 원소는 Integer이므로 런타임에 ClassCastException이 발생한다.
+                                         // 이런 일을 방지하려면 (제네릭 배열이 생성되지 않도록) (1)에서 컴파일 오류를 내야 한다.
+
     }
 
 }
