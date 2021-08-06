@@ -69,8 +69,8 @@ class Chooser2<T> {
         choiceList = new ArrayList<>(choices);
     }
 
-    // 코드양이 조금 늘엏ㅆ고 아마도 조금 더 느릴 테지만, 런타임에 ClassCastException을 만날 일은 없으니 그만한 가치가 있다.
-    public Object choose() {
+    // 코드양이 조금 늘었고 아마도 조금 더 느릴 테지만, 런타임에 ClassCastException을 만날 일은 없으니 그만한 가치가 있다.
+    public T choose() {
         Random rnd = ThreadLocalRandom.current();
         
         return choiceList.get(rnd.nextInt(choiceList.size()));
