@@ -22,7 +22,7 @@ public class ListArray {
     
     public static void main(String[] args) {
         // 런타임에 실패한다.
-        Object[] objectArray = new Long[1];
+        Object[] objectArray = new Long[1]; // 공변
         objectArray[0] = "타입이 달라서 넣을 수 없다."; // ArrayStoreException을 던진다.
 
         // 컴파일되지 않는다!
